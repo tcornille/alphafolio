@@ -22,4 +22,6 @@ jobs:
       - name: 🧱 Install dependencies
         run: poetry install
       - name: 📚 Deploy doc
-        run: poetry run mkdocs gh-deploy
+        run: |
+          poetry install --only doc
+          poetry run mkdocs gh-deploy
