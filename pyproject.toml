@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "alphafolio"
+version = "1.0.0"
+description = "Portfolio simulation tool"
+authors = [
+    "Théo Cornille <theocornille@gmail.com>",
+    "Olivier Saint-Marc <olivier.saintmarc@avoltapartners.com>",
+]
+packages = [{include = "alphafolio", from = "src"}]
+include = ["pyproject.toml", "poetry.lock"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12, <3.13"
+streamlit = "^1.39.0"
+yfinance = "^0.2.51"
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.5.49"
+mkdocstrings = {extras = ["python"], version = "^0.27.0"}
+
+[tool.poetry.scripts]
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+ruff = "^0.4.8"
+rich = "^13.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Enable all docstring checks
+# select = ["D"]

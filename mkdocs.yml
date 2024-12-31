@@ -1,0 +1,101 @@
+site_name: AlphaFolio
+site_description: Portfolio simulation tool
+site_author: Théo Cornille
+site_url: https://tcornille.github.io/alphafolio/
+repo_url: https://github.com/tcornille/alphafolio/
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  pygments_style: "lovelace"
+  logo: assets/alphafolio_dalle.jpg
+  favicon: assets/alphafolio_dalle.jpg
+  features:
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+    - navigation.sections
+    #- navigation.expand
+    - navigation.path
+    - navigation.tabs
+    - navigation.sections
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+markdown_extensions:
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      use_pygments: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - markdown.extensions.sane_lists
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - autorefs
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_options:
+              ignore_init_summary: true
+            show_root_heading: true
+            merge_init_into_class: false
+            docstring_style: sphinx
+            docstring_section_style: table
+            heading_level: 1
+            filters: ["!^_"]
+            inherited_members: true
+            parameter_headings: true
+            preload_modules: [mkdocstrings]
+            relative_crossrefs: true
+            scoped_crossrefs: true
+            separate_signature: true
+            show_bases: false
+            show_inheritance_diagram: true
+            show_root_full_path: false
+            show_signature_annotations: true
+            show_source: true
+            show_symbol_type_heading: false
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary: true
+            unwrap_annotated: true
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+nav:
+  - Project description: index.md
+  - About:
+      - Data: nav/DATA.md
+
+extra:
+  social:
+    #- icon: fontawesome/brands/linkedin
+    #  link: https://www.linkedin.com/in/tcornille/
+    - icon: fontawesome/brands/github
+      link: https://tcornille.github.io/alphafolio/
